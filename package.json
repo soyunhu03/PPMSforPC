@@ -1,0 +1,35 @@
+{
+  "name": "ppms-app",
+  "version": "1.0.0",
+  "description": "PPMS-MC Launcher Application",
+  "author": "PPMS Team",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "postinstall": "patch-package",
+    "build": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^30.5.1",
+    "electron-builder": "^24.13.3",
+    "patch-package": "^8.0.1"
+  },
+  "build": {
+    "appId": "com.ppms.app",
+    "productName": "PPMS_Launcher",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": ["nsis"]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "perMachine": false,
+      "installerIcon": "build/icon.ico",
+      "uninstallerIcon": "build/icon.ico",
+      "license": "license.txt"
+    }
+  }
+}
